@@ -118,7 +118,33 @@ Expected: `{"prediction": "damage"}` or `{"prediction": "no_damage"}`
 
 **Note:** If you don't have the data directory, run `./get_data.sh` first to download test images from the course repository.
 
-## Step 6: Run the Grader
+## Step 6: Get the Grader Code
+
+The grader code needs to be downloaded from the course repository:
+
+```bash
+# Download the grader code
+./get_grader.sh
+```
+
+**Alternative: Manual download**
+```bash
+# Create grader directory
+mkdir -p grader
+
+# Clone just the grader directory using sparse checkout
+cd grader
+git init
+git remote add origin https://github.com/joestubbs/coe379L-fa25.git
+git config core.sparseCheckout true
+echo "code/Project2/*" > .git/info/sparse-checkout
+git pull --depth=1 origin main
+mv code/Project2/* .
+rm -rf code
+cd ..
+```
+
+## Step 7: Run the Grader
 
 The grader will test your server automatically. The grader uses a Docker container that needs to connect to your server.
 
@@ -154,7 +180,7 @@ python3 grader.py
 
 **Note:** For the grader to work, you need the test data in `/data/damage` and `/data/no_damage` directories.
 
-## Step 7: View Logs (if needed)
+## Step 8: View Logs (if needed)
 
 ```bash
 # View container logs
@@ -167,7 +193,7 @@ docker-compose ps
 docker inspect hurricane-damage-classifier
 ```
 
-## Step 8: Stop the Server
+## Step 9: Stop the Server
 
 ```bash
 docker-compose down
