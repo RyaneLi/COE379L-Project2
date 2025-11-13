@@ -79,5 +79,6 @@ echo "Data structure:"
 ls -la data/
 echo ""
 echo "You can now test the inference server with:"
-echo "  curl -X POST http://localhost:5000/inference -H 'Content-Type: application/octet-stream' --data-binary @data/damaged/00001.jpeg"
+echo "  FIRST_IMG=\$(ls data/damage/*.jpeg | head -1)"
+echo "  curl -X POST http://localhost:5000/inference -H 'Content-Type: application/octet-stream' --data-binary @\"\$FIRST_IMG\""
 
