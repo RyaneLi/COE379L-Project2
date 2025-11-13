@@ -62,8 +62,20 @@ def inference():
         return jsonify({"error": "Model not loaded"}), 500
 
     try:
-        # Get image data from request body (binary)
-        image_data = request.data
+        # Get image data - handle both multipart form data (from grader) and raw binary
+        image_data = None
+        
+        # Check for multipart form data (used by grader)
+        if 'image' in request.files:
+            file = request.files['image']
+            image_data = file.read()
+        # Check for raw binary in request body
+        elif request.data:
+            image_data = request.data
+        # Check for form data with image field
+        elif 'image' in request.form:
+            # This shouldn't happen, but handle it just in case
+            return jsonify({"error": "Image must be sent as binary data or multipart file"}), 400
 
         if not image_data:
             return jsonify({"error": "No image data provided"}), 400

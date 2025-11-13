@@ -1,4 +1,5 @@
-FROM python:3.9-slim
+# Specify platform to ensure x86/amd64 architecture
+FROM --platform=linux/amd64 python:3.9-slim
 
 WORKDIR /app
 
