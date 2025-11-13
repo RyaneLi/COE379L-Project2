@@ -1,11 +1,10 @@
-version: '3.8'
-
 services:
   inference-server:
-    image: your-dockerhub-username/hurricane-damage-classifier:latest
+    image: slrpz/hurricane-damage-classifier:latest
+    platform: linux/amd64  # Ensure x86 architecture
     container_name: hurricane-damage-classifier
     ports:
-      - "5000:5000"
+      - "5001:5000"  # Host port 5001 maps to container port 5000
     restart: unless-stopped
     environment:
       - FLASK_ENV=production
