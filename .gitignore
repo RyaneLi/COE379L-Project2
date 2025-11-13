@@ -71,8 +71,6 @@ test_inference.sh
 verify_architecture.sh
 QUICK_VM_TEST.sh
 
-# Server files (included in Docker image, not needed in repo)
-inference_server.py
 
 # Extra documentation files
 DEPLOYMENT_STEPS.md
