@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  inference-server:
+    image: your-dockerhub-username/hurricane-damage-classifier:latest
+    container_name: hurricane-damage-classifier
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    environment:
+      - FLASK_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/summary"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
