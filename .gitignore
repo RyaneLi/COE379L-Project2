@@ -16,7 +16,10 @@ ENV/
 *.ipynb_checkpoints
 
 # Model files (large binary files)
-*.h5
+# Keep best_model.h5, ignore others
+best_alt_lenet5_model.h5
+best_dense_model.h5
+best_lenet5_model.h5
 *.hdf5
 *.pb
 *.ckpt
@@ -58,4 +61,27 @@ Thumbs.db
 # Environment variables
 .env
 .env.local
+
+# Extra helper scripts and documentation (not required for submission)
+build_and_push.sh
+get_data.sh
+get_grader.sh
+test_inference_vm.sh
+test_inference.sh
+verify_architecture.sh
+QUICK_VM_TEST.sh
+
+# Extra documentation files
+DEPLOYMENT_STEPS.md
+TESTING_ON_VM.md
+SUBMISSION_CHECKLIST.md
+REQUIREMENTS_CHECKLIST.md
+Use_of_AI.md
+report.txt
+
+# Grader directory (not required for submission)
+grader/
+
+# Project PDF will be added separately
+# *.pdf is already ignored above
 
