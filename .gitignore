@@ -73,7 +73,6 @@ QUICK_VM_TEST.sh
 
 # Server files (included in Docker image, not needed in repo)
 inference_server.py
-requirements.txt
 
 # Extra documentation files
 DEPLOYMENT_STEPS.md
