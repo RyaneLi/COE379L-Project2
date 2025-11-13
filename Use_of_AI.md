@@ -161,3 +161,10 @@ Use of AI
 
        if __name__ == '__main__':
            app.run(host='0.0.0.0', port=5000, debug=False)
+
+[5]. Tool: AI Coding Assistant (Cursor)
+
+     Prompt: Draft README instructions covering how to use the container image, docker-compose workflow, and example API requests for the inference server
+
+     Output:
+       Added README sections describing Docker image build/push steps, docker-compose start/stop commands, and curl/Python examples for GET /summary and POST /inference endpoints.

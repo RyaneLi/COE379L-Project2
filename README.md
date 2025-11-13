@@ -71,9 +71,13 @@ Use the provided build script which automatically handles platform detection:
 
 **Replace `your-dockerhub-username` with your actual Docker Hub username.**
 
+**Note:** The pre-built image for this project is available at `slrpz/hurricane-damage-classifier:latest` on Docker Hub.
+
 ### Running with Docker Compose
 
-**Before starting:** Update `docker-compose.yml` and replace `your-dockerhub-username` with your actual Docker Hub username.
+**Pre-built Image:** The image is available on Docker Hub as `slrpz/hurricane-damage-classifier:latest`
+
+**Before starting:** If using a different image, update `docker-compose.yml` and replace the image name with your Docker Hub username.
 
 **Start the server:**
 ```bash
